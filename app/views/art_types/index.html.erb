@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Art Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @art_types.each do |art_type| %>
+      <tr>
+        <td><%= art_type.name %></td>
+        <td><%= art_type.type %></td>
+        <td><%= link_to 'Show', art_type %></td>
+        <td><%= link_to 'Edit', edit_art_type_path(art_type) %></td>
+        <td><%= link_to 'Destroy', art_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Art type', new_art_type_path %>
